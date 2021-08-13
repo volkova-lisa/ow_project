@@ -8,8 +8,8 @@ import retrofit2.http.Path;
 
 public interface JsonPlaceholderApi {
 
-    @GET("api/v1/object/{id}")
-    Call<List<NumOfPages>> getPages(@Path("id")int id);
+    @GET("/api/v1/entities/getAllIds")
+    Call<String> getData();
 
 
 

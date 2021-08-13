@@ -41,7 +41,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getData() {
+    private void getData() {
+        Call<String> call = jsonPlaceholderApi.getData();
 
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (!response.isSuccessful()) {
+                    textView.setText("Code: " + response.code());
+                    return;
+                }
+
+                String data = response.body();
+                String content = " ";
+
+                //textView.append(data);
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                textView.setText(t.getMessage());
+            }
+        });
     }
 }
