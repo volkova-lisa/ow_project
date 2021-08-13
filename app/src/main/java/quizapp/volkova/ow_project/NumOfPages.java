@@ -2,9 +2,9 @@ package quizapp.volkova.ow_project;
 
 public class NumOfPages {
 
-    private int id;
+    private String data;
 
-    public int getId() {
-        return id;
+    public String getData() {
+        return data;
     }
 }
